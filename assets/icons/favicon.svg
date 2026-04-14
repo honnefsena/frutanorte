@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fruta Norte">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5c2d6e"/>
+      <stop offset="50%" style="stop-color:#c0185a"/>
+      <stop offset="100%" style="stop-color:#e8541a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#g)"/>
+  <path fill="#f5c518" d="M18 38c4-12 14-20 28-22 2 8-2 18-10 24-6 4-12 5-18-2z"/>
+  <ellipse cx="34" cy="28" fill="#3d1a4a" opacity="0.35" rx="8" ry="5" transform="rotate(-20 34 28)"/>
+</svg>
