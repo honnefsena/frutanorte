@@ -17,6 +17,13 @@
   --color-red-wave: #d94f2b;
   --color-magenta: #c0185a;
 
+  /* Cores das Ondas (SVG Refactor) */
+  --wave-color-1: #fcaf21;
+  --wave-color-2: #eb1241;
+  --wave-color-3: #913c8e;
+  --wave-color-4: #faebc8;
+  --wave-color-5: #cfdd3a;
+
   /* Neutros */
   --color-white: #ffffff;
   --color-bg: #f9f6f2;

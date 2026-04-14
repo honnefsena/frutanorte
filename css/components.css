@@ -628,6 +628,7 @@
 }
 
 /* ——— Divisores de seção — ondas PNG ——— */
+/* ——— Divisores de seção — ONDAS SVG REFACTOR (SEAMLESS TILING) ——— */
 .section-divider {
   position: relative;
   overflow: hidden;
@@ -635,253 +636,73 @@
 
 .section-divider--waves {
   width: 100%;
-  max-width: none;
+  height: 140px;
   line-height: 0;
   z-index: var(--z-section-divider-waves);
-  padding-block: 24px;
-  margin-block: -24px;
+  margin-top: -70px;
+  margin-bottom: -70px;
+  pointer-events: none;
 }
 
-/*
- * Ondas coladas ao hero ficam dentro de .site-masthead--home para compartilhar o mesmo
- * contexto de empilhamento: z-index acima do hero (1) e do header (2), e do badge no header.
- */
-.site-masthead--home>.section-divider--waves {
-  z-index: var(--z-section-divider-waves);
-}
-
-.section-divider__waves-inner {
-  position: relative;
-  isolation: isolate;
-  height: clamp(40px, 6vw, 58px);
-  transform-origin: center center;
-}
-
-.section-divider--flip .section-divider__waves-inner {
+.section-divider--flip {
   transform: rotate(180deg);
 }
 
 .section-divider__wave {
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.section-divider__wave--green {
-  transform: translateY(0);
-}
-
-.section-divider__wave--light {
-  transform: translateY(-4px);
-}
-
-.section-divider__wave--purple {
-  transform: translateY(-8px);
-}
-
-.section-divider__wave--red {
-  transform: translateY(-12px);
-}
-
-.section-divider__wave--yellow {
-  transform: translateY(-16px);
-}
-
-.section-divider__wave-track {
-  display: flex;
-  width: 200%;
-  height: 100%;
-  will-change: transform;
-  animation: section-divider-wave-scroll linear infinite;
-}
-
-.section-divider__wave--green .section-divider__wave-track {
-  animation-duration: 52s;
-}
-
-.section-divider__wave--light .section-divider__wave-track {
-  animation-duration: 78s;
-  animation-direction: reverse;
-}
-
-.section-divider__wave--purple .section-divider__wave-track {
-  animation-duration: 64s;
-}
-
-.section-divider__wave--red .section-divider__wave-track {
-  animation-duration: 88s;
-  animation-direction: reverse;
-}
-
-.section-divider__wave--yellow .section-divider__wave-track {
-  animation-duration: 46s;
-}
-
-.section-divider__wave-slice {
-  flex: 0 0 50%;
+  width: 100%;
   height: 100%;
   background-repeat: repeat-x;
-  background-position: 0 100%;
-  background-size: auto 100%;
+  background-size: 1600px 140px; /* Ciclo fixo para garantir continuidade */
+  animation: wave-scroll linear infinite;
 }
 
-.section-divider__wave--green .section-divider__wave-slice {
-  background-image: url("../assets/images/wave-green.png");
-}
-
-.section-divider__wave--light .section-divider__wave-slice {
-  background-image: url("../assets/images/wave-light.png");
-}
-
-.section-divider__wave--purple .section-divider__wave-slice {
-  background-image: url("../assets/images/wave-purple.png");
-}
-
-.section-divider__wave--red .section-divider__wave-slice {
-  background-image: url("../assets/images/wave-red.png");
-}
-
-.section-divider__wave--yellow .section-divider__wave-slice {
-  background-image: url("../assets/images/wave-yellow.png");
-}
-
-/* Empilhamento distinto por divisor (evita repetição visual) */
-.section-divider--waves-order-1 .section-divider__wave--green {
-  z-index: 1;
-}
-
-.section-divider--waves-order-1 .section-divider__wave--light {
-  z-index: 2;
-}
-
-.section-divider--waves-order-1 .section-divider__wave--purple {
-  z-index: 3;
-}
-
-.section-divider--waves-order-1 .section-divider__wave--red {
-  z-index: 4;
-}
-
-.section-divider--waves-order-1 .section-divider__wave--yellow {
+/* Camada 1: #fcaf21 */
+.section-divider__wave--1 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 140' preserveAspectRatio='none'%3E%3Cpath fill='%23fcaf21' d='M0,70 C200,70 200,20 400,20 C600,20 600,80 800,80 C1000,80 1000,130 1200,130 C1400,130 1400,70 1600,70 V140 H0 Z'/%3E%3C/svg%3E");
+  animation-duration: 30s;
   z-index: 5;
 }
 
-.section-divider--waves-order-2 .section-divider__wave--yellow {
-  z-index: 1;
-}
-
-.section-divider--waves-order-2 .section-divider__wave--green {
-  z-index: 2;
-}
-
-.section-divider--waves-order-2 .section-divider__wave--red {
-  z-index: 3;
-}
-
-.section-divider--waves-order-2 .section-divider__wave--light {
+/* Camada 2: #eb1241 */
+.section-divider__wave--2 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 140' preserveAspectRatio='none'%3E%3Cpath fill='%23eb1241' d='M0,80 C240,80 300,30 480,30 C720,30 720,90 960,90 C1200,90 1200,140 1440,140 C1550,140 1550,80 1600,80 V140 H0 Z'/%3E%3C/svg%3E");
+  animation-duration: 45s;
+  animation-direction: reverse;
   z-index: 4;
 }
 
-.section-divider--waves-order-2 .section-divider__wave--purple {
-  z-index: 5;
-}
-
-.section-divider--waves-order-3 .section-divider__wave--light {
-  z-index: 1;
-}
-
-.section-divider--waves-order-3 .section-divider__wave--purple {
-  z-index: 2;
-}
-
-.section-divider--waves-order-3 .section-divider__wave--yellow {
+/* Camada 3: #913c8e */
+.section-divider__wave--3 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 140' preserveAspectRatio='none'%3E%3Cpath fill='%23913c8e' d='M0,60 C160,60 240,10 400,10 S640,70 800,70 S1120,130 1280,130 S1520,60 1600,60 V140 H0 Z'/%3E%3C/svg%3E");
+  animation-duration: 60s;
   z-index: 3;
 }
 
-.section-divider--waves-order-3 .section-divider__wave--green {
-  z-index: 4;
-}
-
-.section-divider--waves-order-3 .section-divider__wave--red {
-  z-index: 5;
-}
-
-.section-divider--waves-order-4 .section-divider__wave--red {
-  z-index: 1;
-}
-
-.section-divider--waves-order-4 .section-divider__wave--yellow {
+/* Camada 4: #faebc8 */
+.section-divider__wave--4 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 140' preserveAspectRatio='none'%3E%3Cpath fill='%23faebc8' d='M0,90 C280,90 360,40 560,40 S880,100 1120,100 S1440,140 1600,140 V140 H0 Z'/%3E%3C/svg%3E");
+  animation-duration: 75s;
+  animation-direction: reverse;
   z-index: 2;
 }
 
-.section-divider--waves-order-4 .section-divider__wave--purple {
-  z-index: 3;
-}
-
-.section-divider--waves-order-4 .section-divider__wave--green {
-  z-index: 4;
-}
-
-.section-divider--waves-order-4 .section-divider__wave--light {
-  z-index: 5;
-}
-
-.section-divider--waves-order-5 .section-divider__wave--light {
+/* Camada 5: #cfdd3a */
+.section-divider__wave--5 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 140' preserveAspectRatio='none'%3E%3Cpath fill='%23cfdd3a' d='M0,50 C120,50 200,0 400,0 S720,60 960,60 S1280,120 1440,120 S1560,50 1600,50 V140 H0 Z'/%3E%3C/svg%3E");
+  animation-duration: 40s;
   z-index: 1;
 }
 
-.section-divider--waves-order-5 .section-divider__wave--green {
-  z-index: 2;
-}
-
-.section-divider--waves-order-5 .section-divider__wave--yellow {
-  z-index: 3;
-}
-
-.section-divider--waves-order-5 .section-divider__wave--red {
-  z-index: 4;
-}
-
-.section-divider--waves-order-5 .section-divider__wave--purple {
-  z-index: 5;
-}
-
-.section-divider--waves-order-6 .section-divider__wave--purple {
-  z-index: 1;
-}
-
-.section-divider--waves-order-6 .section-divider__wave--red {
-  z-index: 2;
-}
-
-.section-divider--waves-order-6 .section-divider__wave--green {
-  z-index: 3;
-}
-
-.section-divider--waves-order-6 .section-divider__wave--yellow {
-  z-index: 4;
-}
-
-.section-divider--waves-order-6 .section-divider__wave--light {
-  z-index: 5;
-}
-
-@keyframes section-divider-wave-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+@keyframes wave-scroll {
+  from { background-position-x: 0; }
+  to { background-position-x: -1600px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .section-divider__wave-track {
+  .section-divider__wave {
     animation: none;
   }
 }
