@@ -13,6 +13,13 @@
   <meta property="og:image" content="https://www.frutanorte.com.br/assets/images/og-image.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://www.frutanorte.com.br/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fruta Norte — Polpas de açaí premium" />
+  <meta name="twitter:description"
+    content="Polpas de açaí brasileiras premium. Sabor urbano, autêntico e cheio de atitude." />
+  <meta name="twitter:image" content="https://www.frutanorte.com.br/assets/images/og-image.jpg" />
+  <link rel="canonical" href="https://www.frutanorte.com.br/" />
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,6 +29,20 @@
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Fruta Norte",
+      "url": "https://www.frutanorte.com.br/",
+      "logo": "https://www.frutanorte.com.br/assets/images/logo-topo-centro.png",
+      "description": "Polpas de açaí premium com origem amazônica.",
+      "email": "contato@frutanorte.com.br",
+      "sameAs": [
+        "https://wa.me/5500000000000"
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -32,7 +53,7 @@
       <header class="site-header site-header--home">
         <div class="container site-header__inner">
           <div class="site-header__left">
-            <a class="site-header__logo-inicio" href="index.html">
+            <a class="site-header__logo-inicio" href="#inicio">
               <img src="assets/images/logo-inicio.png" width="200" height="56" alt="Fruta Norte" />
             </a>
             <ul class="site-header__social site-header__social--bar" aria-label="Redes sociais">
@@ -54,18 +75,18 @@
               </li>
             </ul>
           </div>
-          <a class="site-header__logo-centro" href="index.html">
+          <a class="site-header__logo-centro" href="#inicio">
             <img src="assets/images/logo-topo-centro.png" width="200" height="200" alt="Fruta Norte" />
           </a>
           <div class="site-header__right">
-            <a class="site-header__cta site-header__cta--bar" href="contato.html">Entre em contato</a>
-            <div class="site-header__lang site-header__lang--bar" aria-label="Idioma">
-              <a href="index.html" hreflang="pt-BR" class="is-active">PT</a>
+            <a class="site-header__cta site-header__cta--bar " href="#contato">Entre em contato</a>
+            <!-- <div class="site-header__lang site-header__lang--bar" aria-label="Idioma">
+              <a href="https://www.frutanorte.com.br/" hreflang="pt-BR" class="is-active">PT</a>
               <span class="site-header__lang-sep" aria-hidden="true">|</span>
-              <a href="#" hreflang="en">EN</a>
+              <span class="site-header__lang-disabled" lang="en" aria-disabled="true">EN</span>
               <span class="site-header__lang-sep" aria-hidden="true">|</span>
-              <a href="#" hreflang="es">ES</a>
-            </div>
+              <span class="site-header__lang-disabled" lang="es" aria-disabled="true">ES</span>
+            </div> -->
             <button type="button" class="nav-toggle nav-toggle--with-icon" aria-expanded="false"
               aria-controls="site-nav" aria-label="Abrir menu">
               <span class="nav-toggle__visual" aria-hidden="true">
@@ -100,76 +121,35 @@
                       alt="" /></a>
                 </li>
               </ul>
-              <a class="site-header__cta" href="contato.html">Entre em contato</a>
+              <a class="site-header__cta" href="#contato">Entre em contato</a>
               <div class="site-header__lang" aria-label="Idioma">
-                <a href="index.html" hreflang="pt-BR" class="is-active">PT</a>
+                <!-- <a href="https://www.frutanorte.com.br/" hreflang="pt-BR" class="is-active">PT</a>
                 <span class="site-header__lang-sep" aria-hidden="true">|</span>
-                <a href="#" hreflang="en">EN</a>
+                <span class="site-header__lang-disabled" lang="en" aria-disabled="true">EN</span>
                 <span class="site-header__lang-sep" aria-hidden="true">|</span>
-                <a href="#" hreflang="es">ES</a>
+                <span class="site-header__lang-disabled" lang="es" aria-disabled="true">ES</span> -->
               </div>
             </div>
             <ul class="nav__list">
-              <li><a class="nav__link nav__link--active" href="index.html">Início</a></li>
-              <li><a class="nav__link" href="produtos.html">Produtos</a></li>
-              <li><a class="nav__link" href="sobre.html">Sobre</a></li>
-              <li><a class="nav__link" href="qualidade.html">Qualidade</a></li>
-              <li><a class="nav__link" href="contato.html">Contato</a></li>
+              <li><a class="nav__link nav__link--active" href="#inicio">Início</a></li>
+              <li><a class="nav__link" href="#sobre">Sobre</a></li>
+              <li><a class="nav__link" href="#produtos">Produtos</a></li>
+              <li><a class="nav__link" href="#contato">Contato</a></li>
             </ul>
           </div>
         </nav>
       </header>
-      <section class="hero hero--home" aria-roledescription="carousel" aria-label="Destaques">
+      <section id="inicio" class="hero hero--home" role="region" aria-label="Início">
         <div class="hero__carousel" data-carousel>
           <div class="hero__slides">
-            <article class="hero__slide hero__slide--vivid is-active" data-slide role="group"
-              aria-roledescription="slide" aria-label="1 de 4">
-              <div class="hero__slide-bg hero__slide-bg--g1"></div>
-              <div class="hero__visual">
-                <img class="hero__product" src="assets/images/hero-tub.svg" width="200" height="280" alt="" />
-                <div class="hero__headline">
-                  <h1 class="hero__title--brush">Açaí Fruta Norte</h1>
-                </div>
-              </div>
-            </article>
-            <article class="hero__slide hero__slide--vivid" data-slide role="group" aria-roledescription="slide"
-              aria-hidden="true" aria-label="2 de 4">
-              <div class="hero__slide-bg hero__slide-bg--g2"></div>
-              <div class="hero__visual">
-                <img class="hero__product" src="assets/images/hero-tub.svg" width="200" height="280" alt="" />
-                <div class="hero__headline">
-                  <p class="hero__title--brush">100% Brasil</p>
-                </div>
-              </div>
-            </article>
-            <article class="hero__slide hero__slide--vivid" data-slide role="group" aria-roledescription="slide"
-              aria-hidden="true" aria-label="3 de 4">
-              <div class="hero__slide-bg hero__slide-bg--g3"></div>
-              <div class="hero__visual">
-                <img class="hero__product" src="assets/images/hero-tub.svg" width="200" height="280" alt="" />
-                <div class="hero__headline">
-                  <p class="hero__title--brush">Sabor que gruda</p>
-                </div>
-              </div>
-            </article>
-            <article class="hero__slide hero__slide--vivid" data-slide role="group" aria-roledescription="slide"
-              aria-hidden="true" aria-label="4 de 4">
-              <div class="hero__slide-bg hero__slide-bg--g4"></div>
-              <div class="hero__visual">
-                <img class="hero__product" src="assets/images/hero-tub.svg" width="200" height="280" alt="" />
-                <div class="hero__headline">
-                  <p class="hero__title--brush">Leve para seu negócio</p>
-                </div>
-              </div>
+            <article class="hero__slide hero__slide--video is-active" data-slide>
+              <video class="hero__video" src="assets/videos/frutanorte.mp4" autoplay muted playsinline loop>
+              </video>
+              <h1 class="visually-hidden">Açaí Fruta Norte</h1>
             </article>
           </div>
-          <button type="button" class="hero__btn-prev" data-carousel-prev aria-label="Slide anterior">
-            ‹
-          </button>
-          <button type="button" class="hero__btn-next" data-carousel-next aria-label="Próximo slide">
-            ›
-          </button>
-          <ul class="hero__dots" data-carousel-dots aria-label="Selecionar slide"></ul>
+        </div>
+      </section>
       <div class="section-divider section-divider--waves section-divider--waves-order-5" aria-hidden="true">
         <div class="section-divider__wave section-divider__wave--1"></div>
         <div class="section-divider__wave section-divider__wave--2"></div>
@@ -177,8 +157,9 @@
         <div class="section-divider__wave section-divider__wave--4"></div>
         <div class="section-divider__wave section-divider__wave--5"></div>
       </div>
+    </div>
 
-    <section class="section section--cream">
+    <section id="sobre" class="section section--cream">
       <div class="container">
         <header class="section__header reveal">
           <span class="section__eyebrow">Por que Fruta Norte</span>
@@ -225,7 +206,7 @@
       <div class="section-divider__wave section-divider__wave--5"></div>
     </div>
 
-    <section class="section section--purple">
+    <section id="produtos" class="section section--purple">
       <div class="container">
         <header class="section__header reveal">
           <span class="section__eyebrow">Linha</span>
@@ -262,7 +243,7 @@
           </article>
         </div>
         <p class="text-center mt-0 mb-8" style="margin-top: var(--space-12)">
-          <a class="btn btn--primary" href="produtos.html">Ver todos os produtos</a>
+          <a class="btn btn--primary" href="#produtos">Ver todos os produtos</a>
         </p>
       </div>
     </section>
@@ -275,14 +256,14 @@
       <div class="section-divider__wave section-divider__wave--5"></div>
     </div>
 
-    <section class="cta-strip reveal">
+    <section id="contato" class="cta-strip reveal">
       <div class="container">
         <h2>Bora colaborar?</h2>
         <p>
           Seja para revenda, food service ou parcerias — a equipe Fruta Norte responde com a
           mesma energia do nosso açaí.
         </p>
-        <a class="btn btn--secondary" href="contato.html">Chamar no contato</a>
+        <a class="btn btn--secondary" href="mailto:contato@frutanorte.com.br">Chamar no contato</a>
       </div>
     </section>
   </main>
@@ -303,27 +284,29 @@
         <p>Polpas de açaí premium com alma brasileira e visual de rua.</p>
         <div class="site-footer__social">
           <a href="https://wa.me/5500000000000" aria-label="WhatsApp" rel="noopener noreferrer"><img
-              src="assets/icons/whatsapp.svg" alt="" /></a>
+              src="assets/icons/whatsapp.svg" width="22" height="22" loading="lazy" alt="" /></a>
           <a href="#" aria-label="Instagram" rel="noopener noreferrer"><img src="assets/icons/instagram.svg"
-              alt="" /></a>
-          <a href="#" aria-label="Facebook" rel="noopener noreferrer"><img src="assets/icons/facebook.svg" alt="" /></a>
-          <a href="#" aria-label="YouTube" rel="noopener noreferrer"><img src="assets/icons/youtube.svg" alt="" /></a>
+              width="22" height="22" loading="lazy" alt="" /></a>
+          <a href="#" aria-label="Facebook" rel="noopener noreferrer"><img src="assets/icons/facebook.svg" width="22"
+              height="22" loading="lazy" alt="" /></a>
+          <a href="#" aria-label="YouTube" rel="noopener noreferrer"><img src="assets/icons/youtube.svg" width="22"
+              height="22" loading="lazy" alt="" /></a>
         </div>
       </div>
       <div>
         <h2 class="site-footer__title">Navegação</h2>
         <ul class="site-footer__list">
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="qualidade.html">Qualidade</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
       <div>
         <h2 class="site-footer__title">Contato</h2>
         <ul class="site-footer__list">
           <li><a href="mailto:contato@frutanorte.com.br">contato@frutanorte.com.br</a></li>
-          <li><a href="contato.html">Formulário no site</a></li>
+          <li><a href="#contato">Fale com a equipe</a></li>
         </ul>
       </div>
     </div>

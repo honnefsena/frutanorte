@@ -51,6 +51,11 @@
     intervalId = window.setInterval(next, autoplayMs);
   }
 
+  if (total <= 1) {
+    if (total === 1) goTo(0);
+    return;
+  }
+
   if (dotsContainer && total > 0) {
     dotsContainer.innerHTML = "";
     for (var d = 0; d < total; d++) {
@@ -104,3 +109,4 @@
   goTo(0);
   startAutoplay();
 })();
+
