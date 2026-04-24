@@ -945,6 +945,7 @@
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  margin-bottom: 40px;
 }
 
 .hero--home .hero__carousel {
@@ -1294,6 +1295,12 @@
   justify-content: center;
 }
 
+.section--produtos {
+  position: relative;
+  z-index: 140;
+  padding-block: 0;
+}
+
 .sobre__top-wave {
   position: relative;
   z-index: 140;
@@ -1305,6 +1312,53 @@
   background-position: center top;
   margin-top: clamp(-28px, -3vw, -12px);
   margin-bottom: clamp(var(--space-4), 3vw, var(--space-8));
+}
+
+.produtos__top-wave {
+  position: relative;
+  z-index: 140;
+  width: 100%;
+  height: clamp(36px, 5vw, 72px);
+  background-image: url("../assets/images/onda-fixa.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center top;
+  margin-top: clamp(-28px, -3vw, -12px);
+  
+}
+
+.produtos__container {
+  width: 100%;
+  max-width: none;
+  padding-inline: 50px;
+}
+
+.produtos__body {
+  background: #faf2dc;
+  padding-block: 0 var(--space-12);
+}
+
+.produtos__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.produtos__title {
+  margin-bottom: var(--space-3);
+  color: #ed2f59;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6.5vw, 5.5rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.produtos__subtitle {
+  max-width: 760px;
+  margin-inline: auto;
+  color: #ed2f59;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 700;
 }
 
 .sobre__container {
@@ -1514,7 +1568,16 @@
     padding-bottom: var(--space-6);
   }
 
+  .section--produtos {
+    padding-bottom: var(--space-6);
+  }
+
   .sobre__top-wave {
+    height: clamp(28px, 10vw, 44px);
+    margin-bottom: var(--space-4);
+  }
+
+  .produtos__top-wave {
     height: clamp(28px, 10vw, 44px);
     margin-bottom: var(--space-4);
   }
@@ -1527,7 +1590,15 @@
     font-size: clamp(2rem, 12vw, 3rem);
   }
 
+  .produtos__title {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
   .sobre__subtitle {
+    font-size: 0.98rem;
+  }
+
+  .produtos__subtitle {
     font-size: 0.98rem;
   }
 
