@@ -92,6 +92,9 @@ $len = static function (string $s): int {
 $name = $cut(trim((string)($data['name'] ?? '')), 120);
 $email = $cut(trim((string)($data['email'] ?? '')), 254);
 $phone = $cut(trim((string)($data['phone'] ?? '')), 40);
+$address = $cut(trim((string)($data['address'] ?? '')), 200);
+$city = $cut(trim((string)($data['city'] ?? '')), 80);
+$state = $cut(trim((string)($data['state'] ?? '')), 80);
 $subjectKey = trim((string)($data['subject'] ?? ''));
 $message = $cut(trim((string)($data['message'] ?? '')), 4000);
 
@@ -103,6 +106,21 @@ if ($len($name) < 2) {
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'E-mail inválido']);
+    exit;
+}
+if ($len($address) < 2) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Endereço inválido']);
+    exit;
+}
+if ($len($city) < 2) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Cidade inválida']);
+    exit;
+}
+if ($len($state) < 2) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Estado inválido']);
     exit;
 }
 if (!isset($subjectLabels[$subjectKey])) {
@@ -121,17 +139,23 @@ $textBody = "Nome: $name\nE-mail: $email\n";
 if ($phone !== '') {
     $textBody .= "Telefone: $phone\n";
 }
+$textBody .= "Endereço: $address\nCidade: $city\nEstado: $state\n";
 $textBody .= 'Assunto: ' . $subjectLabels[$subjectKey] . "\n\n" . $message;
 
 $safeName = htmlspecialchars($name, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 $safeEmail = htmlspecialchars($email, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 $safePhone = htmlspecialchars($phone, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+$safeAddress = htmlspecialchars($address, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+$safeCity = htmlspecialchars($city, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+$safeState = htmlspecialchars($state, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 $safeSub = htmlspecialchars($subjectLabels[$subjectKey], ENT_QUOTES | ENT_HTML5, 'UTF-8');
 $safeMsg = htmlspecialchars($message, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 $htmlBody = "<p><strong>Nome:</strong> $safeName</p><p><strong>E-mail:</strong> $safeEmail</p>";
 if ($phone !== '') {
     $htmlBody .= "<p><strong>Telefone:</strong> $safePhone</p>";
 }
+$htmlBody .= "<p><strong>Endereço:</strong> $safeAddress</p><p><strong>Cidade:</strong> $safeCity</p>";
+$htmlBody .= "<p><strong>Estado:</strong> $safeState</p>";
 $htmlBody .= "<p><strong>Assunto:</strong> $safeSub</p><hr /><pre style=\"white-space:pre-wrap;font-family:sans-serif\">$safeMsg</pre>";
 
 $payload = [

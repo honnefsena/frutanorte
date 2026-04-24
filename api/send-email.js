@@ -18,7 +18,7 @@ const SUBJECT_LABELS = {
 };
 
 /**
- * @param {object} payload - { name, email, phone?, subject, message }
+ * @param {object} payload - { name, email, phone?, address, city, state, subject, message }
  * @param {object} config - from loadConfig()
  */
 async function sendContactEmail(payload, config) {
@@ -31,6 +31,9 @@ async function sendContactEmail(payload, config) {
     `Nome: ${payload.name}`,
     `E-mail: ${payload.email}`,
     payload.phone ? `Telefone: ${payload.phone}` : null,
+    `Endereço: ${payload.address}`,
+    `Cidade: ${payload.city}`,
+    `Estado: ${payload.state}`,
     `Assunto: ${SUBJECT_LABELS[subjectKey] || subjectKey}`,
     "",
     payload.message,
@@ -42,6 +45,9 @@ async function sendContactEmail(payload, config) {
     <p><strong>Nome:</strong> ${escapeHtml(payload.name)}</p>
     <p><strong>E-mail:</strong> ${escapeHtml(payload.email)}</p>
     ${payload.phone ? `<p><strong>Telefone:</strong> ${escapeHtml(payload.phone)}</p>` : ""}
+    <p><strong>Endereço:</strong> ${escapeHtml(payload.address)}</p>
+    <p><strong>Cidade:</strong> ${escapeHtml(payload.city)}</p>
+    <p><strong>Estado:</strong> ${escapeHtml(payload.state)}</p>
     <p><strong>Assunto:</strong> ${escapeHtml(SUBJECT_LABELS[subjectKey] || subjectKey)}</p>
     <hr />
     <pre style="font-family: sans-serif; white-space: pre-wrap;">${escapeHtml(payload.message)}</pre>

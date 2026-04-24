@@ -71,6 +71,27 @@
       setFieldError("err-phone", "Telefone muito longo.");
       ok = false;
     }
+    if (!data.address || data.address.length < 2) {
+      setFieldError("err-address", "Informe o endereço (mínimo 2 caracteres).");
+      ok = false;
+    } else if (data.address.length > 200) {
+      setFieldError("err-address", "Endereço muito longo (máximo 200 caracteres).");
+      ok = false;
+    }
+    if (!data.city || data.city.length < 2) {
+      setFieldError("err-city", "Informe a cidade.");
+      ok = false;
+    } else if (data.city.length > 80) {
+      setFieldError("err-city", "Cidade: máximo 80 caracteres.");
+      ok = false;
+    }
+    if (!data.state || data.state.length < 2) {
+      setFieldError("err-state", "Informe o estado.");
+      ok = false;
+    } else if (data.state.length > 80) {
+      setFieldError("err-state", "Estado: máximo 80 caracteres.");
+      ok = false;
+    }
     if (!data.subject) {
       setFieldError("err-subject", "Selecione um assunto.");
       ok = false;
@@ -96,6 +117,9 @@
       name: trim(fd.get("name")),
       email: trim(fd.get("email")),
       phone: trim(fd.get("phone")),
+      address: trim(fd.get("address")),
+      city: trim(fd.get("city")),
+      state: trim(fd.get("state")),
       subject: trim(fd.get("subject")),
       message: trim(fd.get("message")),
       website: trim(fd.get("website")),
@@ -124,6 +148,9 @@
         name: payload.name,
         email: payload.email,
         phone: payload.phone || undefined,
+        address: payload.address,
+        city: payload.city,
+        state: payload.state,
         subject: payload.subject,
         message: payload.message,
       }),

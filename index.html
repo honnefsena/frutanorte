@@ -135,7 +135,7 @@
                 </ul>
               </li>
             </ul>
-            <a class="nav__finder" href="#onde-encontrar">
+            <a class="nav__finder" href="#contato">
               <p class="nav__finder-title"><strong>ENCONTRAR AGORA</strong></p>
               <p class="nav__finder-text">UM PRODUTO FRUTA NORTE</p>
               <img src="assets/images/localizacao-estado.png" width="180" height="171" alt="Encontre Fruta Norte no Mato Grosso" />
@@ -426,7 +426,7 @@
       </div>
     </section>
 
-    <div class="section-divider section-divider--waves section-divider--waves-order-3" aria-hidden="true">
+    <div class="section-divider section-divider--waves section-divider--waves-before-contato" aria-hidden="true">
       <div class="section-divider__wave section-divider__wave--1"></div>
       <div class="section-divider__wave section-divider__wave--2"></div>
       <div class="section-divider__wave section-divider__wave--3"></div>
@@ -434,14 +434,159 @@
       <div class="section-divider__wave section-divider__wave--5"></div>
     </div>
 
-    <section id="contato" class="cta-strip reveal">
-      <div class="container">
-        <h2 id="onde-encontrar">Bora colaborar?</h2>
-        <p>
-          Seja para revenda, food service ou parcerias — a equipe Fruta Norte responde com a
-          mesma energia do nosso açaí.
-        </p>
-        <a class="btn btn--secondary" href="mailto:contato@frutanorte.com.br">Chamar no contato</a>
+    <section id="contato" class="section section--contato reveal" aria-labelledby="contato-title">
+      <div class="contato__top-wave" aria-hidden="true"></div>
+      <div class="contato__body">
+        <div class="container contato__container">
+          <header class="contato__header">
+            <h2 class="contato__title" id="contato-title">Entre em contato</h2>
+            <p class="contato__subtitle">
+              Conheça a nossa linha de produtos, ideal para saborear com alguém especial ou para
+              transformação ou revenda.
+            </p>
+          </header>
+        </div>
+
+        <div class="contato__split">
+          <figure class="contato__figure">
+            <img
+              class="contato__figure-img"
+              src="assets/images/pessoa.webp"
+              width="480"
+              height="640"
+              alt="Cliente satisfeito com polpa de açaí Fruta Norte"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="contato__form-column">
+            <div class="contato__form-wrap">
+              <div id="form-success" class="form-status form-status--success" role="status" aria-live="polite"></div>
+              <div id="form-error" class="form-status form-status--error" role="alert" aria-live="assertive"></div>
+
+              <form
+                id="contact-form"
+                class="form contato__form"
+                data-contact-endpoint="api/send-email.php"
+                novalidate
+              >
+                <input class="form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                <div class="form__group">
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    placeholder="Nome completo"
+                    aria-label="Nome completo"
+                  />
+                  <p id="err-name" class="form__error" hidden></p>
+                </div>
+
+                <div class="form__group">
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="Telefone"
+                    aria-label="Telefone"
+                  />
+                  <p id="err-phone" class="form__error" hidden></p>
+                </div>
+
+                <div class="form__group">
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    placeholder="E-mail"
+                    aria-label="E-mail"
+                  />
+                  <p id="err-email" class="form__error" hidden></p>
+                </div>
+
+                <div class="form__group">
+                  <input
+                    id="contact-address"
+                    type="text"
+                    name="address"
+                    required
+                    autocomplete="street-address"
+                    placeholder="Endereço"
+                    aria-label="Endereço"
+                  />
+                  <p id="err-address" class="form__error" hidden></p>
+                </div>
+
+                <div class="contato__form-row">
+                  <div class="form__group">
+                    <input
+                      id="contact-city"
+                      type="text"
+                      name="city"
+                      required
+                      autocomplete="address-level2"
+                      placeholder="Cidade"
+                      aria-label="Cidade"
+                    />
+                    <p id="err-city" class="form__error" hidden></p>
+                  </div>
+                  <div class="form__group">
+                    <input
+                      id="contact-state"
+                      type="text"
+                      name="state"
+                      required
+                      autocomplete="address-level1"
+                      placeholder="Estado"
+                      aria-label="Estado"
+                    />
+                    <p id="err-state" class="form__error" hidden></p>
+                  </div>
+                </div>
+
+                <div class="form__group">
+                  <select id="contact-subject" name="subject" required aria-label="Assunto">
+                    <option value="" disabled selected>Assunto</option>
+                    <option value="comercial">Comercial / revenda</option>
+                    <option value="parceria">Parceria / eventos</option>
+                    <option value="qualidade">Qualidade / documentação</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                  <p id="err-subject" class="form__error" hidden></p>
+                </div>
+
+                <div class="form__group">
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    required
+                    placeholder="Mensagem"
+                    aria-label="Mensagem"
+                  ></textarea>
+                  <p id="err-message" class="form__error" hidden></p>
+                </div>
+
+                <div class="form__group form__checkbox">
+                  <input id="contact-consent" type="checkbox" name="consent" value="1" required />
+                  <label class="contato__consent-label" for="contact-consent">
+                    Autorizo o uso dos meus dados para retorno deste contato, conforme a política de privacidade.
+                  </label>
+                </div>
+                <p id="err-consent" class="form__error" hidden></p>
+
+                <button id="contact-submit" class="contato__submit" type="submit">Enviar</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="contato__split-spacer" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -507,6 +652,7 @@
   <script src="js/main.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/animations.js" defer></script>
+  <script src="js/contact.js" defer></script>
 </body>
 
 </html>

@@ -64,15 +64,34 @@ function validateBody(body) {
   const name = sanitize(body.name, 120);
   const email = sanitize(body.email, 254);
   const phone = sanitize(body.phone, 40);
+  const address = sanitize(body.address, 200);
+  const city = sanitize(body.city, 80);
+  const state = sanitize(body.state, 80);
   const subject = sanitize(body.subject, 80);
   const message = sanitize(body.message, 4000);
 
   if (name.length < 2) errors.push("nome inválido");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("e-mail inválido");
+  if (address.length < 2) errors.push("endereço inválido");
+  if (city.length < 2) errors.push("cidade inválida");
+  if (state.length < 2) errors.push("estado inválido");
   if (!SUBJECT_LABELS[subject]) errors.push("assunto inválido");
   if (message.length < 10) errors.push("mensagem muito curta");
 
-  return { ok: errors.length === 0, errors, data: { name, email, phone: phone || undefined, subject, message } };
+  return {
+    ok: errors.length === 0,
+    errors,
+    data: {
+      name,
+      email,
+      phone: phone || undefined,
+      address,
+      city,
+      state,
+      subject,
+      message,
+    },
+  };
 }
 
 app.post("/api/contact", async (req, res) => {
