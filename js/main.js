@@ -86,6 +86,28 @@
     });
   }
 
+  var sobreContent = document.getElementById("sobre-conteudo");
+  var sobreNavLinks = document.querySelectorAll('.sobre__nav .sobre__nav-btn[href^="#"]');
+
+  if (sobreContent && sobreNavLinks.length) {
+    sobreNavLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        var hash = link.getAttribute("href");
+        if (!hash) return;
+
+        var target = sobreContent.querySelector(hash);
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        if (window.history && typeof window.history.replaceState === "function") {
+          window.history.replaceState(null, "", hash);
+        }
+      });
+    });
+  }
+
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });

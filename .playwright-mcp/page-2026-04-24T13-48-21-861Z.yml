@@ -1,0 +1,145 @@
+- generic [active] [ref=e1]:
+  - link "Ir para o conteúdo" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - link "Fruta Norte" [ref=e8] [cursor=pointer]:
+            - /url: "#inicio"
+            - img "Fruta Norte" [ref=e9]
+          - list "Redes sociais" [ref=e10]:
+            - listitem [ref=e11]:
+              - link "WhatsApp" [ref=e12] [cursor=pointer]:
+                - /url: https://wa.me/5500000000000
+            - listitem [ref=e13]:
+              - link "YouTube" [ref=e14] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e15]:
+              - link "Facebook" [ref=e16] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e17]:
+              - link "Instagram" [ref=e18] [cursor=pointer]:
+                - /url: "#"
+        - link "Fruta Norte" [ref=e19] [cursor=pointer]:
+          - /url: "#inicio"
+          - img "Fruta Norte" [ref=e20]
+        - generic [ref=e21]:
+          - link "Entre em contato" [ref=e22] [cursor=pointer]:
+            - /url: "#contato"
+          - button "Abrir menu" [ref=e23] [cursor=pointer]
+      - region "Início" [ref=e25]:
+        - article "1 de 1" [ref=e28]:
+          - heading "Açaí Fruta Norte" [level=1] [ref=e30]
+    - region "Apresentação" [ref=e31]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - heading "Apresentação" [level=2] [ref=e35]
+          - paragraph [ref=e36]: Conheça os nossos produtos e um pouco da história da Fruta Norte.
+        - generic [ref=e37]:
+          - complementary [ref=e38]:
+            - img "Açaí Fruta Norte em destaque" [ref=e39]
+          - region "Conteúdo da apresentação" [ref=e41]:
+            - generic [ref=e42]:
+              - heading "A Fruta Norte" [level=3] [ref=e43]
+              - paragraph [ref=e44]: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum facilisis sem, nec dictum enim cursus et. Integer bibendum, justo in feugiat interdum, elit diam tincidunt ipsum, at tincidunt lorem risus vel enim.
+              - paragraph [ref=e45]: Phasellus vel feugiat lectus. Donec aliquam ligula et ipsum sodales, sed volutpat mauris malesuada. Mauris vel leo id tortor eleifend porta eget at ipsum.
+              - paragraph [ref=e46]: Sed interdum est sit amet tellus malesuada, a congue lorem ultricies. Curabitur varius neque in est commodo, eget eleifend nisi dignissim. In hac habitasse platea dictumst.
+            - generic [ref=e47]:
+              - heading "De onde vem o açaí" [level=3] [ref=e48]
+              - paragraph [ref=e49]: Quisque ac mi interdum, sodales eros nec, varius massa. In ultricies augue non risus varius, vitae mattis sem feugiat. Pellentesque at diam vitae lorem pulvinar posuere non sit amet nibh.
+              - paragraph [ref=e50]: Aliquam erat volutpat. Integer ullamcorper, nibh non egestas commodo, arcu lorem ultricies nulla, a dictum nisi odio ut metus. Etiam sit amet nisl et sem iaculis feugiat.
+            - generic [ref=e51]:
+              - heading "Qualidade" [level=3] [ref=e52]
+              - paragraph [ref=e53]: Morbi scelerisque, neque et sagittis gravida, libero lorem vestibulum leo, eu interdum ipsum tortor sit amet dui. Suspendisse tristique sem vel nibh mattis, id cursus turpis hendrerit.
+              - paragraph [ref=e54]: Nulla facilisi. Suspendisse porta, neque eget sodales varius, massa est aliquam urna, at faucibus purus elit at nibh. Ut gravida laoreet sollicitudin.
+            - generic [ref=e55]:
+              - heading "Onde encontrar" [level=3] [ref=e56]
+              - paragraph [ref=e57]: Nunc eu urna et lectus suscipit condimentum. Aenean in tortor viverra, pellentesque orci ac, tincidunt libero. Praesent id turpis velit. Integer volutpat, sapien at efficitur fermentum, leo ex malesuada velit, non sagittis nibh arcu et ipsum.
+              - paragraph [ref=e58]: Duis malesuada orci non erat sodales, vitae rutrum lacus gravida. Curabitur sit amet neque at lectus scelerisque pretium non sit amet justo. Praesent tempus malesuada tellus, nec fermentum sem gravida non.
+          - navigation "Navegação da apresentação" [ref=e59]:
+            - link "A FRUTA NORTE" [ref=e60] [cursor=pointer]:
+              - /url: "#a-fruta-norte"
+            - link "DE ONDE VEM O AÇAÍ" [ref=e61] [cursor=pointer]:
+              - /url: "#de-onde-vem-o-acai"
+            - link "QUALIDADE" [ref=e62] [cursor=pointer]:
+              - /url: "#qualidade"
+            - link "ONDE ENCONTRAR" [ref=e63] [cursor=pointer]:
+              - /url: "#sobre-onde-encontrar"
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]: Linha
+        - heading "Polpas que viram mania" [level=2] [ref=e68]
+        - paragraph [ref=e69]: Tradicional, com guaraná ou blends especiais — cada pote é um convite para experimentar.
+      - generic [ref=e70]:
+        - article [ref=e71]:
+          - generic [ref=e72]: Açaí tradicional
+          - generic [ref=e73]:
+            - paragraph [ref=e74]: Linha 500g
+            - heading "Polpa pura" [level=3] [ref=e75]
+            - paragraph [ref=e76]: Sabor marcante e cremosidade de verdadeiro açaí da Amazônia.
+        - article [ref=e77]:
+          - generic [ref=e78]: Com guaraná
+          - generic [ref=e79]:
+            - paragraph [ref=e80]: Linha 1kg
+            - heading "Blend energético" [level=3] [ref=e81]
+            - paragraph [ref=e82]: O equilíbrio entre o açaí e o impulso natural do guaraná.
+        - article [ref=e83]:
+          - generic [ref=e84]: Mix frutas
+          - generic [ref=e85]:
+            - paragraph [ref=e86]: Linha 5kg
+            - heading "Combinações especiais" [level=3] [ref=e87]
+            - paragraph [ref=e88]: Variedades que fogem do óbvio — perfeitas para cardápios criativos.
+        - article [ref=e89]:
+          - generic [ref=e90]: Linha 10kg
+          - generic [ref=e91]:
+            - paragraph [ref=e92]: Volume profissional
+            - heading "Food service" [level=3] [ref=e93]
+            - paragraph [ref=e94]: Formato ideal para cozinhas, açaíterias e alto giro com o mesmo padrão Fruta Norte.
+      - paragraph [ref=e95]:
+        - link "Ver todos os produtos" [ref=e96] [cursor=pointer]:
+          - /url: "#produtos"
+    - generic [ref=e98]:
+      - heading "Bora colaborar?" [level=2] [ref=e99]
+      - paragraph [ref=e100]: Seja para revenda, food service ou parcerias — a equipe Fruta Norte responde com a mesma energia do nosso açaí.
+      - link "Chamar no contato" [ref=e101] [cursor=pointer]:
+        - /url: mailto:contato@frutanorte.com.br
+  - contentinfo [ref=e102]:
+    - generic [ref=e103]:
+      - generic [ref=e104]:
+        - paragraph [ref=e105]: Fruta Norte
+        - paragraph [ref=e106]: Polpas de açaí premium com alma brasileira e visual de rua.
+        - generic [ref=e107]:
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: https://wa.me/5500000000000
+          - link "Instagram" [ref=e109] [cursor=pointer]:
+            - /url: "#"
+          - link "Facebook" [ref=e110] [cursor=pointer]:
+            - /url: "#"
+          - link "YouTube" [ref=e111] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e112]:
+        - heading "Navegação" [level=2] [ref=e113]
+        - list [ref=e114]:
+          - listitem [ref=e115]:
+            - link "Início" [ref=e116] [cursor=pointer]:
+              - /url: "#inicio"
+          - listitem [ref=e117]:
+            - link "Sobre" [ref=e118] [cursor=pointer]:
+              - /url: "#sobre"
+          - listitem [ref=e119]:
+            - link "Produtos" [ref=e120] [cursor=pointer]:
+              - /url: "#produtos"
+          - listitem [ref=e121]:
+            - link "Contato" [ref=e122] [cursor=pointer]:
+              - /url: "#contato"
+      - generic [ref=e123]:
+        - heading "Contato" [level=2] [ref=e124]
+        - list [ref=e125]:
+          - listitem [ref=e126]:
+            - link "contato@frutanorte.com.br" [ref=e127] [cursor=pointer]:
+              - /url: mailto:contato@frutanorte.com.br
+          - listitem [ref=e128]:
+            - link "Fale com a equipe" [ref=e129] [cursor=pointer]:
+              - /url: "#contato"
+    - paragraph [ref=e131]: © 2026 Fruta Norte. Todos os direitos reservados.

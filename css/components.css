@@ -759,8 +759,10 @@
 #produtos,
 #contato,
 #a-fruta-norte,
+#sobre-a-fruta-norte,
 #de-onde-vem-o-acai,
 #qualidade,
+#sobre-onde-encontrar,
 #linha-500g,
 #linha-1kg,
 #linha-5kg,
@@ -1268,6 +1270,269 @@
 
 .section--cream {
   background: var(--color-bg);
+}
+
+.section--sobre {
+  position: relative;
+  z-index: 130;
+  min-height: 88vh;
+  background: #faf2dc;
+  padding-block: 0 var(--space-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sobre__top-wave {
+  position: relative;
+  z-index: 131;
+  width: 100%;
+  height: clamp(36px, 5vw, 72px);
+  background-image: url("../assets/images/onda-fixa.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center top;
+  margin-top: clamp(-28px, -3vw, -12px);
+  margin-bottom: clamp(var(--space-4), 3vw, var(--space-8));
+}
+
+.sobre__container {
+  width: 100%;
+  max-width: none;
+  padding-inline: 50px;
+}
+
+.sobre__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.sobre__title {
+  margin-bottom: var(--space-3);
+  color: #ed2f59;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6.5vw, 5.5rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.sobre__subtitle {
+  max-width: 760px;
+  margin-inline: auto;
+  color: #ed2f59;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 700;
+}
+
+.sobre__content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: stretch;
+  gap: clamp(var(--space-4), 2vw, var(--space-8));
+  min-height: clamp(470px, 62vh, 680px);
+}
+
+.sobre__media {
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  min-height: 100%;
+}
+
+.sobre__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sobre__text-wrap {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.sobre__text {
+  height: 100%;
+  max-height: clamp(430px, 58vh, 620px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-right: var(--space-2);
+  color: #000000;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  scrollbar-color: #f04c4e #f5e3b3;
+}
+
+.sobre__text::-webkit-scrollbar {
+  width: 12px;
+}
+
+.sobre__text::-webkit-scrollbar-track {
+  background: #f5e3b3;
+  border-radius: 12px;
+}
+
+.sobre__text::-webkit-scrollbar-thumb {
+  background: #f04c4e;
+  border-radius: 12px;
+}
+
+.sobre__chapter {
+  margin-bottom: var(--space-8);
+  scroll-margin-top: calc(var(--header-height) + var(--space-8));
+}
+
+.sobre__chapter:last-child {
+  margin-bottom: var(--space-2);
+}
+
+.sobre__chapter h3 {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: #4b1f48;
+  margin-bottom: var(--space-3);
+}
+
+.sobre__chapter p {
+  margin-bottom: var(--space-4);
+}
+
+.sobre__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-self: center;
+  width: 100%;
+}
+
+.sobre__nav-btn {
+  width: 100%;
+  height: 72px;
+  min-height: 72px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: 14px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  text-align: center;
+  justify-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  box-shadow: none;
+  transition: filter var(--transition-fast);
+}
+
+.sobre__nav-label {
+  display: block;
+  transform: translateY(7px);
+}
+
+.sobre__nav-btn--1 {
+  background-image: url("../assets/images/bot1.png");
+}
+
+.sobre__nav-btn--2 {
+  background-image: url("../assets/images/bot2.png");
+}
+
+.sobre__nav-btn--3 {
+  background-image: url("../assets/images/bot3.png");
+}
+
+.sobre__nav-btn--4 {
+  background-image: url("../assets/images/bot4.png");
+}
+
+.sobre__nav-btn:hover {
+  filter: brightness(1.05);
+}
+
+.sobre__nav-btn:focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .section--sobre {
+    min-height: auto;
+    padding-bottom: var(--space-8);
+  }
+
+  .sobre__content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: var(--space-6);
+  }
+
+  .sobre__nav {
+    order: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 72px;
+    align-self: stretch;
+  }
+
+  .sobre__text-wrap {
+    order: 2;
+  }
+
+  .sobre__text {
+    max-height: clamp(280px, 40vh, 420px);
+  }
+
+  .sobre__media {
+    order: 3;
+    min-height: clamp(260px, 38vh, 420px);
+  }
+}
+
+@media (max-width: 640px) {
+  .section--sobre {
+    padding-bottom: var(--space-6);
+  }
+
+  .sobre__top-wave {
+    height: clamp(28px, 10vw, 44px);
+    margin-bottom: var(--space-4);
+  }
+
+  .sobre__header {
+    margin-bottom: var(--space-6);
+  }
+
+  .sobre__title {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .sobre__subtitle {
+    font-size: 0.98rem;
+  }
+
+  .sobre__nav {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre__nav-btn {
+    height: 64px;
+    min-height: 64px;
+    font-size: 0.8rem;
+  }
+
+  .sobre__text {
+    max-height: 320px;
+  }
 }
 
 .section--white {

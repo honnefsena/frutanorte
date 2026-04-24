@@ -163,46 +163,61 @@
       </div>
     </div>
 
-    <section id="sobre" class="section section--cream">
-      <div class="container">
-        <header class="section__header reveal" id="a-fruta-norte">
-          <span class="section__eyebrow">Por que Fruta Norte</span>
-          <h2 class="section__title">Energia que você sente no primeiro gole</h2>
-          <p class="section__intro">
-            Não é minimalismo: é cor, ritmo e sabor. Nossa identidade é urbana e autêntica —
-            igual ao açaí que a gente faz.
+    <section id="sobre" class="section section--cream section--sobre" aria-labelledby="a-fruta-norte">
+      <div class="sobre__top-wave" aria-hidden="true"></div>
+      <div class="container sobre__container">
+        <header class="sobre__header reveal">
+          <h2 class="sobre__title" id="a-fruta-norte">Apresentação</h2>
+          <p class="sobre__subtitle">
+            Conheça os nossos produtos e um pouco da história da Fruta Norte.
           </p>
         </header>
-        <div class="grid-3">
-          <article class="feature-card reveal" id="de-onde-vem-o-acai">
-            <div class="feature-card__icon" aria-hidden="true">🌿</div>
-            <h3>Origem amazônica</h3>
-            <p>
-              Matéria-prima selecionada e rastreável, respeitando quem planta, colhe e vive da
-              floresta.
-            </p>
-          </article>
-          <article class="feature-card reveal">
-            <div class="feature-card__icon" aria-hidden="true">❄️</div>
-            <h3>Cadeia fria firme</h3>
-            <p>
-              Congelamento rápido para prender o sabor e a cor naturais — do freezer à tigela.
-            </p>
-          </article>
-          <article class="feature-card reveal" id="qualidade">
-            <div class="feature-card__icon" aria-hidden="true">🎨</div>
-            <h3>Marca com personalidade</h3>
-            <p>
-              Visual vibrante e urbano: Fruta Norte é para quem não abre mão de estilo nem de
-              qualidade.
-            </p>
-          </article>
+
+        <div class="sobre__content">
+          <aside class="sobre__media reveal">
+            <img src="assets/images/acai.webp" alt="Açaí Fruta Norte em destaque" loading="lazy" />
+          </aside>
+
+          <div class="sobre__text-wrap reveal">
+            <div class="sobre__text" id="sobre-conteudo" role="region" aria-label="Conteúdo da apresentação">
+              <section class="sobre__chapter" id="sobre-a-fruta-norte">
+                <h3>A Fruta Norte</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum facilisis sem, nec dictum enim cursus et. Integer bibendum, justo in feugiat interdum, elit diam tincidunt ipsum, at tincidunt lorem risus vel enim.</p>
+                <p>Phasellus vel feugiat lectus. Donec aliquam ligula et ipsum sodales, sed volutpat mauris malesuada. Mauris vel leo id tortor eleifend porta eget at ipsum.</p>
+                <p>Sed interdum est sit amet tellus malesuada, a congue lorem ultricies. Curabitur varius neque in est commodo, eget eleifend nisi dignissim. In hac habitasse platea dictumst.</p>
+              </section>
+
+              <section class="sobre__chapter" id="de-onde-vem-o-acai">
+                <h3>De onde vem o açaí</h3>
+                <p>Quisque ac mi interdum, sodales eros nec, varius massa. In ultricies augue non risus varius, vitae mattis sem feugiat. Pellentesque at diam vitae lorem pulvinar posuere non sit amet nibh.</p>
+                <p>Aliquam erat volutpat. Integer ullamcorper, nibh non egestas commodo, arcu lorem ultricies nulla, a dictum nisi odio ut metus. Etiam sit amet nisl et sem iaculis feugiat.</p>
+              </section>
+
+              <section class="sobre__chapter" id="qualidade">
+                <h3>Qualidade</h3>
+                <p>Morbi scelerisque, neque et sagittis gravida, libero lorem vestibulum leo, eu interdum ipsum tortor sit amet dui. Suspendisse tristique sem vel nibh mattis, id cursus turpis hendrerit.</p>
+                <p>Nulla facilisi. Suspendisse porta, neque eget sodales varius, massa est aliquam urna, at faucibus purus elit at nibh. Ut gravida laoreet sollicitudin.</p>
+              </section>
+
+              <section class="sobre__chapter" id="sobre-onde-encontrar">
+                <h3>Onde encontrar</h3>
+                <p>Nunc eu urna et lectus suscipit condimentum. Aenean in tortor viverra, pellentesque orci ac, tincidunt libero. Praesent id turpis velit. Integer volutpat, sapien at efficitur fermentum, leo ex malesuada velit, non sagittis nibh arcu et ipsum.</p>
+                <p>Duis malesuada orci non erat sodales, vitae rutrum lacus gravida. Curabitur sit amet neque at lectus scelerisque pretium non sit amet justo. Praesent tempus malesuada tellus, nec fermentum sem gravida non.</p>
+              </section>
+            </div>
+          </div>
+
+          <nav class="sobre__nav reveal" aria-label="Navegação da apresentação">
+            <a class="sobre__nav-btn sobre__nav-btn--1" href="#a-fruta-norte"><span class="sobre__nav-label">A FRUTA NORTE</span></a>
+            <a class="sobre__nav-btn sobre__nav-btn--2" href="#de-onde-vem-o-acai"><span class="sobre__nav-label">DE ONDE VEM O AÇAÍ</span></a>
+            <a class="sobre__nav-btn sobre__nav-btn--3" href="#qualidade"><span class="sobre__nav-label">QUALIDADE</span></a>
+            <a class="sobre__nav-btn sobre__nav-btn--4" href="#sobre-onde-encontrar"><span class="sobre__nav-label">ONDE ENCONTRAR</span></a>
+          </nav>
         </div>
       </div>
     </section>
 
-    <div class="section-divider section-divider--waves section-divider--waves-order-2 section-divider--flip"
-      aria-hidden="true">
+    <div class="section-divider section-divider--waves section-divider--waves-order-5" aria-hidden="true">
       <div class="section-divider__wave section-divider__wave--1"></div>
       <div class="section-divider__wave section-divider__wave--2"></div>
       <div class="section-divider__wave section-divider__wave--3"></div>
