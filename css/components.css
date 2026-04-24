@@ -836,7 +836,7 @@
 
 .section-divider--waves {
   width: 100%;
-  height: 140px;
+  height: 139px;
   line-height: 0;
   z-index: var(--z-section-divider-waves);
   margin-top: -120px;
@@ -852,6 +852,12 @@
 /* Ajuste de empilhamento para transição após "Apresentação" */
 .section-divider--waves-order-5 {
   z-index: 135;
+}
+
+/* Ondas entre rodapé e Contato: acima de .section--contato (z-index 146); invadem a faixa inferior do contato */
+.section-divider--waves-order-4 {
+  z-index: 147;
+  margin-top: clamp(-245px, calc(-20vw - 50px), -218px);
 }
 
 /* Ondas entre Produtos e Contato: acima do bloco .section--produtos (z-index 140) */
@@ -1393,7 +1399,9 @@
 
 .contato__body {
   background: #faf2dc;
-  padding-block: 0 var(--space-12);
+  padding-top: 0;
+  /* Espaço extra para as ondas do rodapé invadirem por cima da área creme, sem encostar no formulário */
+  padding-bottom: calc(var(--space-12) + clamp(44px, 9vw, 100px) + 48px);
   position: relative;
   z-index: 1;
   overflow: visible;
@@ -1432,6 +1440,7 @@
 
 .contato__split {
   --contato-img-bleed: clamp(72px, 10vw, 160px);
+  --contato-figure-shift-down: clamp(56px, 9vw, 120px);
   flex: 1 1 auto;
   min-height: 0;
   display: grid;
@@ -1460,7 +1469,7 @@
   position: relative;
   z-index: 3;
   margin: 0;
-  margin-top: calc(-1 * var(--contato-img-bleed));
+  margin-top: calc(-1 * var(--contato-img-bleed) + var(--contato-figure-shift-down));
   padding: 0;
   align-self: stretch;
   justify-self: stretch;
@@ -1481,7 +1490,7 @@
   min-height: 0;
   height: 0;
   object-fit: contain;
-  object-position: left center;
+  object-position: left bottom;
 }
 
 .contato__form-column {
@@ -2004,6 +2013,10 @@
     margin-bottom: var(--space-4);
   }
 
+  .site-footer__top-wave {
+    height: clamp(32px, 12vw, 56px);
+  }
+
   .sobre__header {
     margin-bottom: var(--space-6);
   }
@@ -2048,7 +2061,7 @@
   .contato__figure {
     grid-column: 1;
     grid-row: 1;
-    margin-top: clamp(-40px, -8vw, -72px);
+    margin-top: calc(clamp(-40px, -8vw, -72px) + clamp(36px, 7vw, 80px));
     justify-self: stretch;
     width: 100%;
     max-width: none;
@@ -2312,17 +2325,40 @@
 
 /* ——— Footer ——— */
 .site-footer {
-  background: var(--color-purple-dark);
-  color: rgba(255, 255, 255, 0.88);
-  padding-block: var(--space-12);
+  position: relative;
+  z-index: 148;
+  background: transparent;
+}
+
+/* Corpo do rodapé: fundo vermelho só abaixo da onda (a onda fica sem bg por trás) */
+.site-footer__body {
+  background: #eb1241;
+  color: #fff;
+  padding-top: clamp(var(--space-4), 3vw, var(--space-8));
+  padding-bottom: var(--space-12);
+}
+
+.site-footer__top-wave {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: clamp(40px, 6vw, 88px);
+  background-color: transparent;
+  background-image: url("../assets/images/wave-red.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center top;
+  margin-top: clamp(-28px, -3vw, -12px);
+  margin-bottom: 0;
 }
 
 .site-footer a {
-  color: var(--color-yellow-light);
+  color: #fff;
 }
 
 .site-footer a:hover {
-  color: var(--color-white);
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
 }
 
 .site-footer__grid {
@@ -2349,7 +2385,7 @@
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-yellow);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: var(--space-4);
 }
 
@@ -2386,7 +2422,7 @@
 }
 
 .site-footer__social a:hover {
-  background: var(--color-magenta);
+  background: rgba(255, 255, 255, 0.25);
   transform: translateY(-3px);
 }
 
@@ -2399,9 +2435,10 @@
 .site-footer__bottom {
   margin-top: var(--space-12);
   padding-top: var(--space-8);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   font-size: 0.875rem;
   text-align: center;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 /* ——— Página interna ——— */
