@@ -1377,6 +1377,7 @@
   background-size: 100% 100%;
   background-position: center;
   padding: 18px 20px 116px;
+  margin-bottom: 50px;
   overflow: visible;
   box-shadow: 0 10px 26px rgba(48, 17, 44, 0.2);
 }
@@ -1396,7 +1397,7 @@
 .produto-card__header {
   min-height: 122px;
   border-radius: 20px;
-  padding: 22px 18px 16px;
+  padding: 0;
 }
 
 .produto-card__header strong {
@@ -1417,7 +1418,6 @@
 }
 
 .produto-card__button {
-  margin-top: auto;
   align-self: flex-start;
   border: 0;
   border-radius: 999px;
