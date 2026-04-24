@@ -66,6 +66,9 @@
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
 
+  /* Menu lateral (home) */
+  --nav-drawer-gradient: linear-gradient(180deg, #eb4339 0%, #f48134 100%);
+
   /* Camadas */
   --z-nav: 100;
   --z-hero-controls: 115;
@@ -77,6 +80,6 @@
 
   /* Layout */
   --container-max: 1200px;
-  --header-height: 72px;
-  --masthead-badge-size: clamp(7.5rem, 22vw, 11.25rem);
+  --header-height: 102px;
+  --masthead-badge-size: 13vw;
 }

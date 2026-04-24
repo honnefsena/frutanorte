@@ -76,7 +76,7 @@
             </ul>
           </div>
           <a class="site-header__logo-centro" href="#inicio">
-            <img src="assets/images/logo-topo-centro.png" width="200" height="200" alt="Fruta Norte" />
+            <img src="assets/images/logo-topo-centro.png" alt="Fruta Norte" />
           </a>
           <div class="site-header__right">
             <a class="site-header__cta site-header__cta--bar " href="#contato">Entre em contato</a>
@@ -100,41 +100,40 @@
             </button>
           </div>
         </div>
-        <nav id="site-nav" class="nav" aria-label="Principal">
-          <div class="container nav__panel">
-            <div class="nav__extras">
-              <ul class="site-header__social" aria-label="Redes sociais">
-                <li>
-                  <a href="https://wa.me/5500000000000" rel="noopener noreferrer" aria-label="WhatsApp"><img
-                      src="assets/icons/whatsapp.png" alt="" /></a>
-                </li>
-                <li>
-                  <a href="#" rel="noopener noreferrer" aria-label="YouTube"><img src="assets/icons/youtube.png"
-                      alt="" /></a>
-                </li>
-                <li>
-                  <a href="#" rel="noopener noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.png"
-                      alt="" /></a>
-                </li>
-                <li>
-                  <a href="#" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.png"
-                      alt="" /></a>
-                </li>
-              </ul>
-              <a class="site-header__cta" href="#contato">Entre em contato</a>
-              <div class="site-header__lang" aria-label="Idioma">
-                <!-- <a href="https://www.frutanorte.com.br/" hreflang="pt-BR" class="is-active">PT</a>
-                <span class="site-header__lang-sep" aria-hidden="true">|</span>
-                <span class="site-header__lang-disabled" lang="en" aria-disabled="true">EN</span>
-                <span class="site-header__lang-sep" aria-hidden="true">|</span>
-                <span class="site-header__lang-disabled" lang="es" aria-disabled="true">ES</span> -->
-              </div>
+        <nav id="site-nav" class="nav nav--drawer" aria-label="Principal">
+          <div class="nav__panel">
+            <div class="nav__top">
+              <a class="nav__logo" href="#inicio">
+                <img src="assets/images/logo-inicio.png" width="88" height="25" alt="Fruta Norte" />
+              </a>
+              <button type="button" class="nav__close" aria-controls="site-nav" aria-label="Fechar menu">
+                <span aria-hidden="true">×</span>
+              </button>
             </div>
-            <ul class="nav__list">
-              <li><a class="nav__link nav__link--active" href="#inicio">Início</a></li>
-              <li><a class="nav__link" href="#sobre">Sobre</a></li>
-              <li><a class="nav__link" href="#produtos">Produtos</a></li>
-              <li><a class="nav__link" href="#contato">Contato</a></li>
+            <ul class="nav__list nav__list--grouped">
+              <li class="nav__group">
+                <strong class="nav__group-title">Apresentação</strong>
+                <ul class="nav__sub">
+                  <li><a class="nav__link" href="#a-fruta-norte">A Fruta Norte</a></li>
+                  <li><a class="nav__link" href="#de-onde-vem-o-acai">De onde vem o açaí?</a></li>
+                  <li><a class="nav__link" href="#qualidade">Qualidade</a></li>
+                </ul>
+              </li>
+              <li class="nav__group">
+                <strong class="nav__group-title">Produtos</strong>
+                <ul class="nav__sub">
+                  <li><a class="nav__link" href="#linha-500g">Linha 500g</a></li>
+                  <li><a class="nav__link" href="#linha-1kg">Linha 1kg</a></li>
+                  <li><a class="nav__link" href="#linha-5kg">Linha 5kg</a></li>
+                  <li><a class="nav__link" href="#linha-10kg">Linha 10kg</a></li>
+                </ul>
+              </li>
+              <li class="nav__group">
+                <strong class="nav__group-title">Contato</strong>
+                <ul class="nav__sub">
+                  <li><a class="nav__link" href="#contato">Contato</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </nav>
@@ -161,7 +160,7 @@
 
     <section id="sobre" class="section section--cream">
       <div class="container">
-        <header class="section__header reveal">
+        <header class="section__header reveal" id="a-fruta-norte">
           <span class="section__eyebrow">Por que Fruta Norte</span>
           <h2 class="section__title">Energia que você sente no primeiro gole</h2>
           <p class="section__intro">
@@ -170,7 +169,7 @@
           </p>
         </header>
         <div class="grid-3">
-          <article class="feature-card reveal">
+          <article class="feature-card reveal" id="de-onde-vem-o-acai">
             <div class="feature-card__icon" aria-hidden="true">🌿</div>
             <h3>Origem amazônica</h3>
             <p>
@@ -185,7 +184,7 @@
               Congelamento rápido para prender o sabor e a cor naturais — do freezer à tigela.
             </p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card reveal" id="qualidade">
             <div class="feature-card__icon" aria-hidden="true">🎨</div>
             <h3>Marca com personalidade</h3>
             <p>
@@ -217,28 +216,36 @@
           </p>
         </header>
         <div class="product-grid">
-          <article class="product-card reveal">
+          <article class="product-card reveal" id="linha-500g">
             <div class="product-card__visual" aria-hidden="true">Açaí tradicional</div>
             <div class="product-card__body">
-              <p class="product-card__meta">Clássico intenso</p>
+              <p class="product-card__meta">Linha 500g</p>
               <h3>Polpa pura</h3>
               <p>Sabor marcante e cremosidade de verdadeiro açaí da Amazônia.</p>
             </div>
           </article>
-          <article class="product-card reveal">
+          <article class="product-card reveal" id="linha-1kg">
             <div class="product-card__visual" aria-hidden="true">Com guaraná</div>
             <div class="product-card__body">
-              <p class="product-card__meta">Energia extra</p>
+              <p class="product-card__meta">Linha 1kg</p>
               <h3>Blend energético</h3>
               <p>O equilíbrio entre o açaí e o impulso natural do guaraná.</p>
             </div>
           </article>
-          <article class="product-card reveal">
+          <article class="product-card reveal" id="linha-5kg">
             <div class="product-card__visual" aria-hidden="true">Mix frutas</div>
             <div class="product-card__body">
-              <p class="product-card__meta">Surpreenda o paladar</p>
+              <p class="product-card__meta">Linha 5kg</p>
               <h3>Combinações especiais</h3>
               <p>Variedades que fogem do óbvio — perfeitas para cardápios criativos.</p>
+            </div>
+          </article>
+          <article class="product-card reveal" id="linha-10kg">
+            <div class="product-card__visual" aria-hidden="true">Linha 10kg</div>
+            <div class="product-card__body">
+              <p class="product-card__meta">Volume profissional</p>
+              <h3>Food service</h3>
+              <p>Formato ideal para cozinhas, açaíterias e alto giro com o mesmo padrão Fruta Norte.</p>
             </div>
           </article>
         </div>
